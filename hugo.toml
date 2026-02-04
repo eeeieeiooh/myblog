@@ -1,0 +1,18 @@
+baseURL = "https://yourusername.github.io/"
+languageCode = "en-us"
+title = "Devon Wilson"
+
+[params]
+  description = "I write about technology, creativity, and living intentionally."
+  author = "Devon Wilson"
+  # Show this many posts on home; V (posts page) shows all. If total > this, home shows "more to release".
+  postsLimit = 11
+  moreToReleaseText = "More to release the rest."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  posts = "/posts/:contentbasename/"

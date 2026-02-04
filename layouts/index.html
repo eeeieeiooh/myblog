@@ -1,0 +1,32 @@
+{{ define "main" }}
+<header>
+    <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+    <hr class="rule">
+</header>
+
+<main>
+    <ul class="posts-list">
+        {{ $posts := where .Site.RegularPages "Type" "posts" }}
+        {{ $total := len $posts }}
+        {{ $limit := default 11 .Site.Params.postsLimit }}
+        {{ $show := $posts.ByDate.Reverse }}
+        {{ if gt $total $limit }}
+            {{ $show = first $limit $show }}
+        {{ end }}
+        {{ range $index, $post := $show }}
+        <li>
+            <span class="post-number">{{ sub $total $index }}.</span>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+        <li>
+            <span class="post-number"></span>
+            <a href="/posts/">v</a>
+        </li>
+    </ul>
+</main>
+
+<footer class="site-footer">
+    <a href="/about/">Info</a>
+</footer>
+{{ end }}

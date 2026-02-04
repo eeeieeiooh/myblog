@@ -1,0 +1,22 @@
+{{ define "main" }}
+<header>
+    <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+    <hr class="rule">
+</header>
+
+<main>
+    <h2 class="page-title">{{ .Title }}</h2>
+
+    <article>
+        {{ .Content }}
+    </article>
+
+    <div class="back-link">
+        <a href="/">←</a>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <a href="/about/">Info</a>
+</footer>
+{{ end }}
