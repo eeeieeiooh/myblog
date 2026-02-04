@@ -39,10 +39,15 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          # Use custom domain so links and canonicals work at devonhwilson.com
+          HUGO_BASEURL: "https://devonhwilson.com/"
         run: |
           hugo \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${HUGO_BASEURL}"
+      - name: Verify CNAME for custom domain
+        run: |
+          test -f public/CNAME && cat public/CNAME || (echo "Missing public/CNAME" && exit 1)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
