@@ -9,6 +9,8 @@ contentDir = "Blog"
   # Show this many posts on home; V (posts page) shows all. If total > this, home shows "more to release".
   postsLimit = 11
   moreToReleaseText = "More to release the rest."
+  # Email subscribe form: paste your Google Apps Script web app URL here (see SUBSCRIBE-FORM.md). Leave empty to hide the form.
+  subscribeFormEndpoint = ""
 
 [markup]
   [markup.goldmark]
