@@ -9,6 +9,10 @@ hugo_stats.json
 .DS_Store
 Thumbs.db
 
+# Secrets (never commit)
+.env
+.env.local
+
 # IDEs
 .vscode/
 .idea/
